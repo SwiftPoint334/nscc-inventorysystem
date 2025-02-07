@@ -2,6 +2,46 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
+class Items {
+    private String name;
+    private Double price;
+    private int quantity;
+
+    public Items(String name, Double price, int quantity) {
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    // no setter for name as the program does not need to edit it
+
+    public Double getPrice() {
+        return this.price;
+    }
+
+    public void setPrice(Double price) {
+        // getPositiveDouble handles the logic for making sure the price is positive
+        this.price = price;
+    }
+
+    public int getQuantity() {
+        return this.quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        // getPositiveInteger handles the logic for making sure the quantity is not negative
+        this.quantity = quantity;
+    }
+
+    public String listItem() {
+        return("Name: " + this.name + " Price: " + this.price + " Quantity: " + this.quantity);
+    }
+}
+
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
